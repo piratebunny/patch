@@ -1,0 +1,39 @@
+* Patch
+Python Implementation of block programming environment for small children
+ 
+** The Blocks
+*** Control
+- for __ in __ 
+- while __
+- def __
+- with __
+*** Operators
+- *, -, +, /, //, %, !, =, ==, >, <, 
+- and, or, not
+- join
+*** Data
+- lists
+- dictionaries
+*** inbuilt functions
+- len()
+- print()
+- input()
+- str()
+- int()
+- float()
+- open()
+- round()
+*** Libraries
+- time
+- random
+
+** Core functionality
+- Drag blocks - link and nest
+- Variables are defined on the fly as in Python
+- Concurrency ???
+- Create custom blocks(functions) using Python and a simple inbuilt text editor
+- Access to (some) of the standard library
+- Ability to import other libraries - adds in new panels of block
+- View Python code produced by blocks
+- Produce custom blocks by combining other blocks or just writing standard Python
+- Edit Python scripts and this is then reflected in the block code.
