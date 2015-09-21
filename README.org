@@ -1,36 +1,46 @@
 * Patch
+
+[[file:graphics/piratebunny.svg]]
+
 Python Implementation of block programming environment for small children
  
-** The Blocks
+** The Blocks Palattes
 *** Control
-- for __ in __ 
-- while __
-- def __
-- with __
+#+begin_src python
+for
+while
+def
+with
+#+end_src
+
 *** Operators
-- *, -, +, /, //, %, !, =, ==, >, <, 
-- and, or, not
-- join
-*** Data
+#+begin_src python
+* - + / // % ! = == > <
+and or not
+join 
+#+end_src
+*** Data Structures
 - lists
 - dictionaries
-*** inbuilt functions
-- len()
-- print()
-- input()
-- str()
-- int()
-- float()
-- open()
-- round()
+*** Inbuilt functions
+#+begin_src python
+len()
+print()
+input()
+str()
+int()
+float()
+open()
+round()
+#+end_src
+
 *** Libraries
-- time
-- random
+time
+random
 
 ** Core functionality
 - Drag blocks - link and nest
 - Variables are defined on the fly as in Python
-- Concurrency ???
 - Create custom blocks(functions) using Python and a simple inbuilt text editor
 - Access to (some) of the standard library
 - Ability to import other libraries - adds in new panels of block
