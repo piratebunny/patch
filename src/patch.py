@@ -43,15 +43,13 @@ SPRITES = [block]
 DISPLAY.add_sprites(*SPRITES)
 
 while DISPLAY.loop_running():
-    if KEYBOARD.read() == 27:
-        DISPLAY.stop()
 
-    mx, my = mymouse.position()
+    #mx, my = mymouse.position()
     button_status =mymouse.button_status()
-    print(mx)
-    print(my)
-    print(button_status)
-    print('\n')
+    #print(mx)
+    #print(my)
+    #print(button_status)
+    #print('\n')
 
     try:
         win.update()
@@ -67,10 +65,28 @@ while DISPLAY.loop_running():
 
     if win.ev == "key":
         print(win.key)
-
+        if win.key == "Escape":
+            try:
+                print("bye,bye1")
+                DISPLAY.destroy()
+                try:
+                    win.destroy()
+                except:
+                    pass
+                mymouse.stop()
+                exit()
+            except:
+                pass
+        if win.key == 'w':
+            block.translateY(10)
+        elif win.key == 's':
+            block.translateY(-10)
+        elif win.key == 'a':
+            block.translateX(-10)
+        elif win.key == 'd':
+            block.translateX(10)
     if win.ev == "click" or win.ev == "drag":
         print("Click")
-        block.x = 30
-        #block.repaint()
+        block.translateX(100)
     else:
         win.ev=""  #clear the event so it doesn't repeat
