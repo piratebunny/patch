@@ -21,7 +21,9 @@ win = DISPLAY.tkwin
 CAMERA = pi3d.Camera(is_3d=False)
 SHADER = pi3d.Shader('uv_flat')
 
-TEXTURE_NAMES = ['../graphics/piratebunny2.png']
+TEXTURE_NAMES = ['../graphics/piratebunny.png',
+                 '../graphics/piratebunny2.png',
+                 ]
 TEXTURES = [pi3d.Texture(t) for t in TEXTURE_NAMES]
 
 # key presses
@@ -33,7 +35,7 @@ omx, omy = mymouse.position()
 class Block(pi3d.ImageSprite):
 
     def __init__(self, camera=None, shader=None, texture=None,
-                 x=10, y=0,
+                 x=0.0, y=0.0,
                  w=10.0, h=10.0, z=1000):
         super(Block, self).__init__(camera=camera, texture=texture,
                                     shader=shader, w=w, h=h, x=x, y=y, z=z)
@@ -51,6 +53,8 @@ DISPLAY.add_sprites(*SPRITES)
 def find_blocks_under_mouse(mx, my):
     return (s for s in SPRITES if s.is_under_mouse(mx, my))
 
+
+click_state = False
 while DISPLAY.loop_running():
 
     mx, my = mymouse.position()
@@ -90,6 +94,13 @@ while DISPLAY.loop_running():
             block.translateX(-10)
         elif win.key == 'd':
             block.translateX(10)
+
+    if button_status in (LEFT_BUTTON, RIGHT_BUTTON):
+        if click_state:
+            block.set_textures([TEXTURES[0]])
+        else:
+            block.set_textures([TEXTURES[1]])
+        click_state = not click_state
 
     if button_status == LEFT_BUTTON:
         LOGGER.info("LEFT_BUTTON")
