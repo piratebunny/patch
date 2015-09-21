@@ -1,10 +1,11 @@
 * Patch
 
-[[file:graphics/piratebunny.svg]]
+[[file:graphics/piratebunny.]]
+# immage derived from https://openclipart.org/detail/192660/blue-rabbit-lapin-bleu
 
 Python Implementation of block programming environment for small children
  
-** The Blocks Palattes
+** The Blocks Platte's
 *** Control
 #+begin_src python
 for
@@ -13,17 +14,45 @@ def
 with
 #+end_src
 
-*** Operators
+*** Expression blocks
+**** Operator block
 #+begin_src python
-+ - *  / // % ! = == > <
-and or not
-join 
++
+-
+*
+/
+//
+% 
 #+end_src
+
+**** Boolian operator block
+#+begin_src python
+and
+or
+not
+#+end_src
+**** Comparison block
+#+begin_src python
+== 
+!= 
+> 
+<
+<= 
+>= 
+is 
+is not
+#+end_src
+
 *** Data Structures
 - lists
 - dictionaries
+
+*** classes
+- sprite
+
 *** Inbuilt functions
 #+begin_src python
+join()
 len()
 print()
 input()
@@ -35,8 +64,11 @@ round()
 #+end_src
 
 *** Libraries
+#+begin_src python
 time
 random
+gpio
+#+end_src
 
 ** Core functionality
 - Drag blocks - link and nest
