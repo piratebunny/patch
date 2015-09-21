@@ -15,7 +15,7 @@ with
 
 *** Operators
 #+begin_src python
-* - + / // % ! = == > <
++ - *  / // % ! = == > <
 and or not
 join 
 #+end_src
